@@ -1,9 +1,9 @@
-import styles from "./Pagination.module.css";
+import styles from './Pagination.module.css'
 
 interface IPagination {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
+  currentPage: number
+  totalPages: number
+  onPageChange: (page: number) => void
 }
 
 export function Pagination({
@@ -11,7 +11,7 @@ export function Pagination({
   totalPages,
   onPageChange,
 }: IPagination) {
-  const pageNumber = Array.from({ length: totalPages }, (_, i) => i + 1);
+  const pageNumber = Array.from({ length: totalPages }, (_, i) => i + 1)
 
   return (
     <nav>
@@ -26,5 +26,5 @@ export function Pagination({
         ))}
       </ul>
     </nav>
-  );
+  )
 }

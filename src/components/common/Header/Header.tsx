@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
-import { Button, ButtonVariant } from "../Button";
-import styles from "./Header.module.css";
+import { Link } from 'react-router-dom'
+import { Button, ButtonVariant } from '../Button'
+import styles from './Header.module.css'
 
 interface IHeader {
-  showReturn?: boolean;
+  showReturn?: boolean
 }
 
 export function Header({ showReturn }: IHeader) {
@@ -18,5 +18,5 @@ export function Header({ showReturn }: IHeader) {
         </Link>
       )}
     </header>
-  );
+  )
 }
