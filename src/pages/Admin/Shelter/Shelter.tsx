@@ -6,9 +6,14 @@ import styles from "./Shelter.module.css";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useHookFormMask } from "use-mask-input";
+<<<<<<< HEAD
 import { toast } from "sonner";
 import { updateShelter } from "../../../services/shelter/updateShelter";
 import { useQueryClient } from "@tanstack/react-query";
+=======
+import { Toaster, toast } from "sonner";
+import { updateShelter } from "../../../services/shelter/updateShelter";
+>>>>>>> 5296e2e61a316f76a50780faa317a53080db8050
 
 const shelterSchema = z.object({
   name: z
@@ -46,7 +51,10 @@ export function Shelter() {
         phone: phone.replace(/\D/g, ""),
         whatsApp: whatsApp.replace(/\D/g, ""),
       });
+<<<<<<< HEAD
       queryCLient.invalidateQueries({ queryKey: ["get-shelter"] });
+=======
+>>>>>>> 5296e2e61a316f76a50780faa317a53080db8050
       toast.success("Dados salvos com sucesso", {
         id: toastId,
         closeButton: true,
