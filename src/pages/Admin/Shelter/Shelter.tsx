@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Button } from "../../../components/common/Button";
+import { Button, ButtonVariant } from "../../../components/common/Button";
 import { Input } from "../../../components/common/Input";
 import { Panel } from "../../../components/layout/Panel";
 import styles from "./Shelter.module.css";
@@ -8,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useHookFormMask } from "use-mask-input";
 import { updateShelter } from "../../../services/shelter/updateShelter";
 import { useQueryClient } from "@tanstack/react-query";
-import { Toaster, toast } from "sonner";
+import { toast } from "sonner";
 import { useShelter } from "../../../hooks/useShelter";
 import { useEffect } from "react";
 import { Skeleton } from "../../../components/common/Skeleton";
@@ -121,7 +121,16 @@ export function Shelter() {
             )}
           </div>
 
-          <Button type="submit">Salvar dados</Button>
+          <Button
+            type="submit"
+            variant={
+              !formState.isDirty || formState.isSubmitting
+                ? ButtonVariant.Disabled
+                : ButtonVariant.Default
+            }
+          >
+            Salvar dados
+          </Button>
         </form>
       )}
     </Panel>
